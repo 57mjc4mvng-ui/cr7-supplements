@@ -111,3 +111,20 @@ window.CR7_SUPABASE_KEY = 'sb_publishable_Da5krg6AYg3pnLoJDeCrWQ_St2Va1Ge';
     {subtree:true,childList:true}
   );
 })();
+/* Hide 100% GENUINE badge */
+(function(){
+  const hideGenuine=()=>{
+    document.querySelectorAll('body *').forEach(el=>{
+      if(el.children.length===0 &&
+         el.textContent.trim().replace(/\s+/g,' ').toUpperCase()==='100% GENUINE'){
+        el.style.display='none';
+      }
+    });
+  };
+
+  hideGenuine();
+  new MutationObserver(hideGenuine).observe(document.body,{
+    subtree:true,
+    childList:true
+  });
+})();
