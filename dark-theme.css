@@ -567,3 +567,45 @@ a:hover{
   color:#ffffff!important;
   border-color:#ff3040!important;
 }
+/* CART DRAWER — DARK FOOTER + QUANTITY CONTROLS */
+
+.cartFoot,
+.cartFoot *{
+  background:#0b0d12!important;
+  color:#f5f7ff!important;
+}
+
+.cartFoot{
+  border-top:1px solid #272b36!important;
+}
+
+.cartFoot button{
+  border-color:#303541!important;
+}
+
+.cartRow .qty,
+.cartRow .qty button,
+.cartRow [class*="qty"],
+.cartRow [class*="Qty"],
+.cartBody [class*="qty"],
+.cartBody [class*="Qty"]{
+  background:#07080c!important;
+  background-color:#07080c!important;
+  color:#fff!important;
+  border-color:#303541!important;
+}
+
+.cartRow .qty button,
+.cartBody [class*="qty"] button,
+.cartBody [class*="Qty"] button{
+  background:#11141b!important;
+  color:#fff!important;
+  border:1px solid #303541!important;
+}
+
+.cartRow .qty span,
+.cartBody [class*="qty"] span,
+.cartBody [class*="Qty"] span{
+  color:#fff!important;
+  background:#07080c!important;
+}
