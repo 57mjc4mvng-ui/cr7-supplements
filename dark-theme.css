@@ -466,3 +466,14 @@ a:hover{
 .categoryCircle:nth-child(5) .categoryCircleVisual img{
   visibility:hidden!important;
 }
+/* PRE-WORKOUT CATEGORY COVER */
+.categoryCircle:nth-child(3) .categoryCircleVisual{
+  background-image:url("https://fjjuemmfpcqexjxbijok.supabase.co/storage/v1/object/public/product-images/41AEE7F4-C9E7-4320-8E10-988CCF87CAEB.png")!important;
+  background-size:100% 100%!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+}
+
+.categoryCircle:nth-child(3) .categoryCircleVisual img{
+  visibility:hidden!important;
+}
