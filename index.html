@@ -436,7 +436,8 @@ document.getElementById('checkoutModal')?.addEventListener('click',e=>{if(e.targ
 function orderOne(id){id=String(id);const p=products.find(x=>String(x.id)===id);if(!p)return;const qty=Number(document.getElementById('qty')?.textContent||1);const state=productVariantState(p);const msg=`Hi CR7 Supplements, I want to order:\n\n${p.name}\nBrand: ${p.brand}\nSize: ${state.size}\nFlavour: ${state.flavour}\nQty: ${qty}\nPrice: ${money(state.price*qty)}\n\nPlease confirm availability.`;window.open('https://wa.me/917988156744?text='+encodeURIComponent(msg),'_blank')}
 
 renderFeatured(); renderCategories(); renderBest(); render();
-updateCart();
+renderFeatured(); renderCategories(); renderBest(); render();
+loadProductsFromSupabase();
 loadProductsFromSupabase();
 document.addEventListener('click',e=>{
  const view=e.target.closest?.('[data-view-product]');
