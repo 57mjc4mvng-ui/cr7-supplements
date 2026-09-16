@@ -1,0 +1,322 @@
+:root{
+  --ink:#f5f7ff;
+  --red:#ff3040;
+  --muted:#9aa0ad;
+  --line:#272b36;
+  --soft:#11131a;
+  --green:#22d27a;
+}
+
+html,body{
+  background:#07080c!important;
+  color:#f5f7ff!important;
+}
+
+body{
+  color:#f5f7ff!important;
+}
+
+.top{
+  background:#0b0d12!important;
+  color:#f5f7ff!important;
+  border-color:var(--line)!important;
+}
+
+.featured,
+.categorySection,
+.section{
+  background:#07080c!important;
+  color:#f5f7ff!important;
+}
+
+.featuredTitle,
+.categorySection h2,
+.section h2,
+.brandsBand h2,
+.banner h2{
+  color:#fff!important;
+  text-shadow:0 0 18px rgba(255,255,255,.12);
+}
+
+.featuredSub,
+.featuredMeta,
+.categorySection p,
+.benefit,
+.count,
+.size,
+.small,
+.eyebrow{
+  color:#9aa0ad!important;
+}
+
+.featuredKicker,
+.featuredTitle em,
+.categorySection h2 em,
+.sale{
+  color:var(--red)!important;
+  text-shadow:0 0 14px rgba(255,48,64,.35);
+}
+
+.featuredStage{
+  background:#090b10!important;
+}
+
+.featuredStage:before{
+  background:radial-gradient(
+    circle,
+    rgba(255,48,64,.10) 0%,
+    rgba(255,255,255,.035) 42%,
+    transparent 70%
+  )!important;
+}
+
+.featuredThumb,
+.categoryCircleVisual{
+  background:#10131a!important;
+  border-color:#292d38!important;
+}
+
+.featuredServices{
+  border-color:var(--line)!important;
+}
+
+.serviceItem{
+  border-color:var(--line)!important;
+}
+
+.serviceItem small{
+  color:#858b98!important;
+}
+
+.categoryCircleVisual{
+  box-shadow:inset 0 0 0 1px #292d38,
+             0 0 25px rgba(255,48,64,.04);
+}
+
+.brandsBand,
+.banner,
+.footer,
+.nav,
+.searchwrap{
+  background:#030407!important;
+}
+
+.brandsBand{
+  border-top:1px solid #191c25;
+  border-bottom:1px solid #191c25;
+}
+
+.grid .card,
+.card{
+  background:#0e1016!important;
+  border-color:#292d38!important;
+  color:#f5f7ff!important;
+}
+
+.card:hover{
+  box-shadow:0 15px 40px rgba(255,48,64,.10);
+  transform:translateY(-2px);
+}
+
+.pic{
+  background:#0a0c11!important;
+}
+
+.brand{
+  color:#8d93a0!important;
+}
+
+.pname{
+  color:#f5f7ff!important;
+}
+
+.price,
+.variantPrice,
+.featuredPrice .now{
+  color:#fff!important;
+  text-shadow:0 0 12px rgba(255,255,255,.08);
+}
+
+.mrp,
+.featuredPrice .old{
+  color:#747a87!important;
+}
+
+.cardbtn,
+.btn{
+  background:#ff3040!important;
+  color:#fff!important;
+  border-color:#ff3040!important;
+  box-shadow:0 0 18px rgba(255,48,64,.18);
+}
+
+.cardbtn:hover,
+.btn:hover{
+  background:#ff4553!important;
+  box-shadow:0 0 28px rgba(255,48,64,.35);
+}
+
+.btn.alt{
+  background:#11141b!important;
+  color:#fff!important;
+  border-color:#333844!important;
+}
+
+.btn.alt:hover{
+  background:#ff3040!important;
+  border-color:#ff3040!important;
+}
+
+.toolbar{
+  border-color:var(--line)!important;
+}
+
+.toolbar select{
+  background:#10131a!important;
+  color:#fff!important;
+  border-color:#303541!important;
+}
+
+.search{
+  background:#10131a!important;
+  border-color:#303541!important;
+}
+
+.search input{
+  background:#10131a!important;
+  color:#fff!important;
+}
+
+.search input::placeholder{
+  color:#777e8b!important;
+}
+
+.search button{
+  background:#10131a!important;
+  color:#ff3040!important;
+}
+
+.heart{
+  background:#11141b!important;
+  border-color:#303541!important;
+  color:#fff!important;
+}
+
+.banner{
+  border:1px solid #1d2029;
+  box-shadow:0 0 35px rgba(255,48,64,.05);
+}
+
+.banner p{
+  color:#9aa0ad!important;
+}
+
+.footer p,
+.footer a{
+  color:#8d93a0!important;
+}
+
+.modal{
+  background:rgba(0,0,0,.78)!important;
+}
+
+.sheet,
+.cartDrawer{
+  background:#0b0d12!important;
+  color:#f5f7ff!important;
+}
+
+.close,
+.cartClose,
+.qty button{
+  background:#11141b!important;
+  color:#fff!important;
+  border-color:#303541!important;
+}
+
+.detailimg{
+  background:#080a0f!important;
+}
+
+.detailbody h2,
+.detailbody h3,
+.cartHead h2{
+  color:#fff!important;
+}
+
+.detailbrand{
+  color:#8d93a0!important;
+}
+
+.chip,
+.variantChoice{
+  background:#11141b!important;
+  color:#fff!important;
+  border-color:#303541!important;
+}
+
+.chip.active,
+.variantChoice.active{
+  background:#ff3040!important;
+  border-color:#ff3040!important;
+  box-shadow:0 0 16px rgba(255,48,64,.2);
+}
+
+.facts{
+  border-color:var(--line)!important;
+}
+
+.facts td{
+  border-color:var(--line)!important;
+}
+
+.cartbar{
+  background:#0b0d12!important;
+  border-color:#303541!important;
+  color:#fff!important;
+  box-shadow:0 -5px 30px rgba(0,0,0,.5);
+}
+
+.cartbar button{
+  background:#ff3040!important;
+}
+
+.cartHead{
+  background:#0b0d12!important;
+  border-color:var(--line)!important;
+}
+
+.cartRow{
+  border-color:var(--line)!important;
+}
+
+.empty{
+  color:#858b98!important;
+}
+
+a:hover{
+  color:#ff4050;
+}
+
+@media(max-width:700px){
+  .featured{
+    background:#07080c!important;
+  }
+
+  .featuredStage{
+    min-height:380px;
+  }
+
+  .featuredStage img{
+    height:370px;
+  }
+
+  .categoryCircleVisual{
+    box-shadow:inset 0 0 0 1px #292d38;
+  }
+
+  .card:hover{
+    box-shadow:none;
+    transform:none;
+  }
+}
