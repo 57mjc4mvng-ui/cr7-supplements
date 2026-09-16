@@ -422,3 +422,14 @@ a:hover{
   background:#0e1016!important;
   border-color:#ff3040!important;
 }
+/* CREATINE CATEGORY COVER */
+.categoryCircle:nth-child(4) .categoryCircleVisual{
+  background-image:url("https://fjjuemmfpcqexjxbijok.supabase.co/storage/v1/object/public/product-images/1EB17706-9215-47F8-AC03-7A078E14B5AD.png")!important;
+  background-size:100% 100%!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+}
+
+.categoryCircle:nth-child(4) .categoryCircleVisual img{
+  visibility:hidden!important;
+}
