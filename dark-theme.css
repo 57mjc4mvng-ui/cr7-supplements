@@ -378,3 +378,17 @@ a:hover{
 .checkout strong {
   color:#f5f7ff!important;
 }
+/* PRODUCT THUMBNAIL STRIP */
+.featuredThumbs{
+  background:#07080c!important;
+  border-color:#272b36!important;
+}
+
+.featuredThumb{
+  background:#0e1016!important;
+  border-color:#303541!important;
+}
+
+.featuredThumb.active{
+  border-color:#ff3040!important;
+}
