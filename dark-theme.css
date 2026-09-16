@@ -488,3 +488,29 @@ a:hover{
 .detailThumb.active {
   border: 2px solid #ff3040!important;
 }
+/* FORCE ALL PRODUCT THUMBNAILS DARK */
+.featuredThumbs .featuredThumb,
+.featuredThumbs button,
+.featuredThumbs > *,
+.detailThumbs .detailThumb,
+.detailThumbs button {
+  background: #07080c !important;
+  background-color: #07080c !important;
+  border: 2px solid #07080c !important;
+  box-shadow: none !important;
+}
+
+.featuredThumbs .featuredThumb img,
+.featuredThumbs button img,
+.detailThumbs .detailThumb img,
+.detailThumbs button img {
+  background: transparent !important;
+}
+
+.featuredThumbs .featuredThumb.active,
+.featuredThumbs button.active,
+.detailThumbs .detailThumb.active {
+  background: #07080c !important;
+  background-color: #07080c !important;
+  border: 2px solid #ff3040 !important;
+}
