@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CR7 Supplements — Admin</title>
+<style>
+:root{--black:#050505;--red:#e51d2a;--line:#e7e7ea;--soft:#f7f7f8;--muted:#707078;--green:#159957}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:#f6f6f7;color:#111}button,input,select,textarea{font:inherit}button{cursor:pointer}
+.top{background:#050505;color:#fff;padding:13px 18px;font-weight:900;letter-spacing:.5px}.top span{color:#ff3340}.wrap{max-width:1280px;margin:auto;padding:24px 18px 60px}
+.header{display:flex;align-items:center;gap:16px;margin-bottom:22px}.logo{font-size:27px;font-weight:1000;font-style:italic;letter-spacing:-2px}.logo span{color:var(--red)}.header .spacer{flex:1}.btn{border:1px solid #111;background:#111;color:#fff;padding:12px 16px;font-weight:900}.btn.alt{background:#fff;color:#111;border-color:#ddd}.btn.red{background:var(--red);border-color:var(--red)}
+.login{min-height:100vh;display:grid;place-items:center;padding:20px}.loginbox{background:#fff;border:1px solid var(--line);width:min(430px,100%);padding:30px;box-shadow:0 20px 60px rgba(0,0,0,.08)}.loginbox h1{font-size:32px;margin:0 0 8px}.loginbox p{color:var(--muted);line-height:1.5}.field{margin:14px 0}.field label{display:block;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;border:1px solid #d8d8dc;background:#fff;padding:12px;outline:none}.field textarea{min-height:110px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:#111}.error{background:#fff0f1;color:#a20f18;border:1px solid #ffc9cd;padding:10px 12px;margin:12px 0;font-size:13px;display:none}.hint{font-size:12px;color:#777}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}.stat{background:#fff;border:1px solid var(--line);padding:18px}.stat small{display:block;color:#777;font-size:11px;text-transform:uppercase;font-weight:900;letter-spacing:1px}.stat strong{display:block;font-size:28px;margin-top:6px}
+.toolbar{background:#fff;border:1px solid var(--line);padding:14px;display:flex;gap:10px;align-items:center;margin-bottom:12px}.toolbar input,.toolbar select{border:1px solid #ddd;padding:11px;background:#fff}.toolbar input{flex:1}.tablewrap{background:#fff;border:1px solid var(--line);overflow:auto}.table{width:100%;border-collapse:collapse;min-width:800px}.table th,.table td{text-align:left;padding:13px 12px;border-bottom:1px solid #eee;font-size:13px;vertical-align:middle}.table th{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:#777;background:#fafafa}.thumb{width:54px;height:54px;background:#fafafa;border:1px solid #eee;object-fit:contain}.tag{display:inline-block;border:1px solid #ddd;padding:4px 7px;font-size:10px;font-weight:900;margin:2px}.tag.red{border-color:#ffb9be;color:#b1111c;background:#fff4f4}.actions{display:flex;gap:6px}.smallbtn{border:1px solid #ddd;background:#fff;padding:8px 10px;font-weight:800}.smallbtn.danger{color:#b1111c}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.58);display:none;align-items:center;justify-content:center;padding:14px;z-index:20}.modal.show{display:flex}.sheet{background:#fff;width:min(850px,100%);max-height:94vh;overflow:auto}.sheethead{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;padding:18px 20px;display:flex;align-items:center;z-index:2}.sheethead h2{margin:0}.sheethead .spacer{flex:1}.form{padding:20px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.full{grid-column:1/-1}.checks{display:flex;gap:18px;flex-wrap:wrap;margin:8px 0 16px}.checks label{font-size:13px;font-weight:800}.checks input{margin-right:6px}.variants{border:1px solid var(--line);background:#fafafa;padding:14px}.variantHead{display:grid;grid-template-columns:1.2fr 1.2fr .8fr .8fr .7fr 38px;gap:8px;font-size:10px;text-transform:uppercase;font-weight:900;color:#777;margin-bottom:7px}.variantRow{display:grid;grid-template-columns:1.2fr 1.2fr .8fr .8fr .7fr 38px;gap:8px;margin-bottom:8px}.variantRow input{width:100%;border:1px solid #ddd;background:#fff;padding:9px}.variantRemove{border:1px solid #ddd;background:#fff;font-weight:900;color:#b1111c}.variantAdd{margin-top:8px}.variantNote{font-size:12px;color:#777;margin-top:8px;line-height:1.4}.formactions{display:flex;gap:10px;justify-content:flex-end;border-top:1px solid #eee;padding-top:18px;margin-top:10px}.status{margin:10px 0;padding:10px 12px;background:#f4f4f5;border:1px solid #ddd;font-size:13px;display:none}.status.show{display:block}.status.ok{background:#eefaf3;border-color:#bde8ce;color:#116b3a}.status.bad{background:#fff0f1;border-color:#ffc9cd;color:#a20f18}
+.empty{text-align:center;padding:45px;color:#777}.back{font-size:13px;text-decoration:underline;font-weight:800}.hidden{display:none!important}
+@media(max-width:800px){.stats{grid-template-columns:1fr 1fr}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.header{align-items:flex-start}.logo{font-size:23px}.toolbar{flex-wrap:wrap}.toolbar input{width:100%;flex:auto}.wrap{padding:18px 12px 50px}}
+</style>
+</head>
+<body>
+<div id="loginView" class="login">
+  <div class="loginbox">
+    <div class="logo">CR7 <span>SUPPLEMENTS</span></div>
+    <h1>Owner Login</h1>
+    <p>Sign in to manage the live CR7 product catalogue.</p>
+    <div id="loginError" class="error"></div>
+    <div class="field"><label>Email</label><input id="email" type="email" autocomplete="username" placeholder="Owner email"></div>
+    <div class="field"><label>Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Password"></div>
+    <button class="btn" style="width:100%" onclick="login()">SIGN IN</button>
+    <p class="hint">Only accounts marked admin/owner in Supabase can edit products.</p>
+    <a class="back" href="./index.html">← Back to CR7 Store</a>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+  <div class="top">CR7 <span>OWNER ADMIN</span> · Live catalogue management</div>
+  <div class="wrap">
+    <div class="header"><div class="logo">CR7 <span>SUPPLEMENTS</span></div><div class="spacer"></div><a class="btn alt" href="./index.html">VIEW STORE</a><button class="btn" onclick="logout()">LOG OUT</button></div>
+    <div class="stats"><div class="stat"><small>Total products</small><strong id="totalStat">0</strong></div><div class="stat"><small>In stock</small><strong id="stockStat">0</strong></div><div class="stat"><small>Best sellers</small><strong id="bestStat">0</strong></div><div class="stat"><small>Categories</small><strong id="catStat">0</strong></div></div>
+    <div id="status" class="status"></div>
+    <div class="toolbar"><input id="search" placeholder="Search products..." oninput="renderTable()"><select id="filter" onchange="renderTable()"><option>All</option><option>Whey</option><option>Whey Isolate</option><option>Pre-Workout</option><option>Creatine</option><option>Gainer</option></select><div class="spacer"></div><button class="btn red" onclick="openNew()">+ ADD PRODUCT</button></div>
+    <div class="tablewrap"><table class="table"><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Flags</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </div>
+</div>
+
+<div id="modal" class="modal"><div class="sheet"><div class="sheethead"><h2 id="formTitle">Add Product</h2><div class="spacer"></div><button class="smallbtn" onclick="closeForm()">✕</button></div><div class="form">
+  <div id="formError" class="error"></div>
+  <div class="formgrid">
+    <div class="field"><label>Product name *</label><input id="f_name"></div>
+    <div class="field"><label>Brand</label><input id="f_brand"></div>
+    <div class="field"><label>Category *</label><select id="f_category"><option>Whey</option><option>Whey Isolate</option><option>Pre-Workout</option><option>Creatine</option><option>Gainer</option></select></div>
+    <div class="field"><label>Price (₹) *</label><input id="f_price" type="number" min="0"></div>
+    <div class="field"><label>MRP (₹)</label><input id="f_mrp" type="number" min="0"></div>
+    <div class="field"><label>Stock</label><input id="f_stock" type="number" min="0" value="0"></div>
+    <div class="field"><label>Size</label><input id="f_size" placeholder="1 kg / 2.2 lb"></div>
+    <div class="field"><label>Flavour</label><input id="f_flavour" placeholder="Chocolate"></div>
+    <div class="field full"><label>Description</label><textarea id="f_description"></textarea></div>
+    <div class="field full"><label>Ingredients</label><textarea id="f_ingredients"></textarea></div>
+    <div class="field full"><label>Nutrition facts</label><textarea id="f_nutrition" placeholder="Calories: 120 kcal\nProtein: 24 g\nCarbs: 3 g\nFat: 1 g"></textarea><div class="hint">One fact per line, for example: Protein: 24 g</div></div>
+    <div class="field full"><label>Size & Flavour Variants</label><div class="variants"><div class="variantHead"><span>Size</span><span>Flavour</span><span>Price ₹</span><span>MRP ₹</span><span>Stock</span><span></span></div><div id="variantRows"></div><button type="button" class="smallbtn variantAdd" onclick="addVariantRow()">+ ADD VARIANT</button><div class="variantNote">Use variants when one product has multiple sizes/flavours with different prices. The first variant is used as the default product price when no selection is made.</div></div></div>
+    <div class="field full"><label>Product images</label><input id="f_image_files" type="file" accept="image/*" multiple style="width:100%;border:1px solid #ddd;padding:10px;background:#fff"><div id="uploadPreview" class="hint" style="margin-top:8px"></div><textarea id="f_images" placeholder="Optional: one image URL per line" style="margin-top:10px"></textarea><div class="hint">Select multiple photos from your phone. Existing image URLs can still be used.</div></div>
+  </div>
+  <div class="checks"><label><input id="f_instock" type="checkbox" checked> In stock</label><label><input id="f_best" type="checkbox"> Best seller</label><label><input id="f_featured" type="checkbox"> Featured</label></div>
+  <div class="formactions"><button class="btn alt" onclick="closeForm()">CANCEL</button><button class="btn red" onclick="saveProduct()">SAVE PRODUCT</button></div>
+</div></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script>
+const client=window.supabase.createClient(window.CR7_SUPABASE_URL,window.CR7_SUPABASE_KEY);
+let rows=[];let editingId=null;let variantRows=[];
+const $=id=>document.getElementById(id);
+function showLoginError(msg){$('loginError').textContent=msg;$('loginError').style.display='block'}
+function showStatus(msg,ok=true){const e=$('status');e.textContent=msg;e.className='status show '+(ok?'ok':'bad');setTimeout(()=>e.className='status',3500)}
+function nutritionToText(obj){return Object.entries(obj||{}).map(([k,v])=>k+': '+v).join('\n')}
+function textToNutrition(text){const out={};text.split(/\n+/).map(x=>x.trim()).filter(Boolean).forEach(line=>{const i=line.indexOf(':');if(i>0)out[line.slice(0,i).trim()]=line.slice(i+1).trim()});return out}
+function esc(s){return String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+async function login(){const email=$('email').value.trim(),password=$('password').value;if(!email||!password)return showLoginError('Enter your email and password.');$('loginError').style.display='none';const {error}=await client.auth.signInWithPassword({email,password});if(error)return showLoginError(error.message);await boot()}
+async function boot(){const {data:{user}}=await client.auth.getUser();if(!user){$('loginView').classList.remove('hidden');$('app').classList.add('hidden');return}const {data:role,error}=await client.rpc('get_my_role');if(error||!['admin','owner'].includes(role)){await client.auth.signOut();showLoginError(error?('Admin check failed: '+error.message):'This account is not an admin/owner account.');return}$('loginView').classList.add('hidden');$('app').classList.remove('hidden');await loadRows()}
+async function logout(){await client.auth.signOut();location.reload()}
+async function loadRows(){const {data:products,error}=await client.from('products').select('id,name,brand,category,price,mrp,size,flavour,rating,review_count,stock,in_stock,is_best_seller,is_featured,description,ingredients,nutrition_facts,created_at').order('created_at',{ascending:true});if(error){return showStatus('Products: '+error.message,false)}const {data:imgs,error:imageError}=await client.from('product_images').select('product_id,image_url,sort_order').order('sort_order',{ascending:true});if(imageError){return showStatus('Images: '+imageError.message,false)}const {data:vars,error:variantError}=await client.from('product_variants').select('id,product_id,size,flavour,price,mrp,stock,in_stock,sort_order').order('sort_order',{ascending:true});if(variantError){return showStatus('Variants: '+variantError.message,false)}const byId={};(imgs||[]).forEach(x=>(byId[x.product_id] ||= []).push(x));const vb={};(vars||[]).forEach(x=>(vb[x.product_id] ||= []).push(x));rows=(products||[]).map(p=>({...p,images:(byId[p.id]||[]).map(x=>x.image_url),variants:vb[p.id]||[]}));renderTable();updateStats()}
+function updateStats(){$('totalStat').textContent=rows.length;$('stockStat').textContent=rows.filter(p=>p.in_stock&&Number(p.stock)>0).length;$('bestStat').textContent=rows.filter(p=>p.is_best_seller).length;$('catStat').textContent=new Set(rows.map(p=>p.category)).size}
+function renderTable(){const q=$('search').value.trim().toLowerCase(),cat=$('filter').value;const list=rows.filter(p=>(cat==='All'||p.category===cat)&&(!q||(p.name+' '+p.brand+' '+p.flavour).toLowerCase().includes(q)));if(!list.length){$('rows').innerHTML='<tr><td colspan="6" class="empty">No products found.</td></tr>';return}$('rows').innerHTML=list.map(p=>{const img=p.images?.[0]||'';return `<tr><td><div style="display:flex;gap:10px;align-items:center"><img class="thumb" src="${esc(img)}" onerror="this.style.opacity=.25"><div><b>${esc(p.name)}</b><div class="hint">${esc(p.brand||'')} · ${esc(p.size||'')}</div></div></div></td><td>${esc(p.category)}</td><td><b>₹${Number(p.price||0).toLocaleString('en-IN')}</b><div class="hint">MRP ₹${Number(p.mrp||0).toLocaleString('en-IN')}</div></td><td>${Number(p.stock||0)} <span class="hint">${p.in_stock?'available':'off'}</span></td><td>${p.is_best_seller?'<span class="tag red">BEST</span>':''}${p.is_featured?'<span class="tag">FEATURED</span>':''}</td><td><div class="actions"><button class="smallbtn" onclick="openEdit('${p.id}')">EDIT</button><button class="smallbtn danger" onclick="deleteProduct('${p.id}')">DELETE</button></div></td></tr>`}).join('')}
+function clearForm(){editingId=null;variantRows=[];$('formTitle').textContent='Add Product';$('f_image_files').value='';$('uploadPreview').textContent='';['f_name','f_brand','f_price','f_mrp','f_size','f_flavour','f_description','f_ingredients','f_nutrition','f_images'].forEach(id=>$(id).value='');$('f_category').value='Whey';$('f_stock').value=0;$('f_instock').checked=true;$('f_best').checked=false;$('f_featured').checked=false;$('formError').style.display='none';renderVariantRows();}
+function openNew(){clearForm();$('modal').classList.add('show')}
+function openEdit(id){const p=rows.find(x=>x.id===id);if(!p)return;editingId=id;variantRows=(p.variants||[]).map(v=>({...v}));$('formTitle').textContent='Edit Product';$('f_name').value=p.name||'';$('f_brand').value=p.brand||'';$('f_category').value=p.category||'Whey';$('f_price').value=p.price||0;$('f_mrp').value=p.mrp||0;$('f_stock').value=p.stock||0;$('f_size').value=p.size||'';$('f_flavour').value=p.flavour||'';$('f_description').value=p.description||'';$('f_ingredients').value=p.ingredients||'';$('f_nutrition').value=nutritionToText(p.nutrition_facts);$('f_images').value=(p.images||[]).join('\n');$('f_image_files').value='';$('uploadPreview').textContent='Existing images: '+(p.images||[]).length+' · select new files to replace them on save.';$('f_instock').checked=p.in_stock!==false;$('f_best').checked=!!p.is_best_seller;$('f_featured').checked=!!p.is_featured;$('formError').style.display='none';renderVariantRows();$('modal').classList.add('show')}
+function renderVariantRows(){const wrap=$('variantRows');if(!wrap)return;wrap.innerHTML=variantRows.map((v,i)=>`<div class="variantRow"><input data-v="size" data-i="${i}" value="${esc(v.size||'')}" placeholder="2 kg"><input data-v="flavour" data-i="${i}" value="${esc(v.flavour||'')}" placeholder="Chocolate"><input data-v="price" data-i="${i}" type="number" min="0" value="${Number(v.price||0)}"><input data-v="mrp" data-i="${i}" type="number" min="0" value="${Number(v.mrp||0)}"><input data-v="stock" data-i="${i}" type="number" min="0" value="${Number(v.stock||0)}"><button type="button" class="variantRemove" onclick="removeVariantRow(${i})">×</button></div>`).join('');wrap.querySelectorAll('[data-v]').forEach(el=>el.addEventListener('input',()=>{const i=Number(el.dataset.i),k=el.dataset.v;variantRows[i][k]=el.value;}));}
+function addVariantRow(){variantRows.push({size:'',flavour:'',price:0,mrp:0,stock:0,in_stock:true,sort_order:variantRows.length});renderVariantRows();}
+function removeVariantRow(i){variantRows.splice(i,1);renderVariantRows();}
+function normalizeVariants(){return variantRows.map((v,i)=>({size:String(v.size||'').trim(),flavour:String(v.flavour||'').trim(),price:Math.max(0,Number(v.price||0)),mrp:Math.max(0,Number(v.mrp||0)),stock:Math.max(0,Number(v.stock||0)),in_stock:Number(v.stock||0)>0,sort_order:i})).filter(v=>v.size||v.flavour||v.price||v.mrp||v.stock)}
+function closeForm(){$('modal').classList.remove('show')}
+async function uploadImages(productId,files){
+  const urls=[];
+  for(const file of files){
+    const safe=file.name.toLowerCase().replace(/[^a-z0-9._-]+/g,'-');
+    const path=`${productId}/${Date.now()}-${Math.random().toString(36).slice(2,8)}-${safe}`;
+    const {error}=await client.storage.from('product-images').upload(path,file,{cacheControl:'3600',upsert:false,contentType:file.type});
+    if(error) throw error;
+    const {data}=client.storage.from('product-images').getPublicUrl(path);
+    urls.push(data.publicUrl);
+  }
+  return urls;
+}
+async function saveProduct(){
+  const name=$('f_name').value.trim(),price=Number($('f_price').value||0);
+  if(!name||price<0){$('formError').textContent='Product name and a valid price are required.';$('formError').style.display='block';return}
+  const variants=normalizeVariants();const first=variants[0];const payload={name,brand:$('f_brand').value.trim(),category:$('f_category').value,description:$('f_description').value.trim(),price:first?first.price:price,mrp:first?first.mrp:Number($('f_mrp').value||0),size:first?first.size:$('f_size').value.trim(),flavour:first?first.flavour:$('f_flavour').value.trim(),stock:first?first.stock:Math.max(0,Number($('f_stock').value||0)),in_stock:first?first.in_stock:$('f_instock').checked,rating:editingId?(rows.find(x=>x.id===editingId)?.rating||5):5,review_count:editingId?(rows.find(x=>x.id===editingId)?.review_count||0):0,is_best_seller:$('f_best').checked,is_featured:$('f_featured').checked,nutrition_facts:textToNutrition($('f_nutrition').value),ingredients:$('f_ingredients').value.trim(),updated_at:new Date().toISOString()};
+  const manualUrls=$('f_images').value.split(/\n+/).map(x=>x.trim()).filter(Boolean);
+  const files=Array.from($('f_image_files').files||[]);
+  let productId=editingId;
+  try{
+    if(editingId){
+      const {error}=await client.from('products').update(payload).eq('id',editingId);if(error)throw error;
+      await client.from('product_images').delete().eq('product_id',editingId);
+    }else{
+      const {data,error}=await client.from('products').insert(payload).select('id').single();if(error)throw error;productId=data.id;
+    }
+    const uploaded=files.length?await uploadImages(productId,files):[];
+    const imageUrls=[...uploaded,...manualUrls];
+    if(imageUrls.length){const {error}=await client.from('product_images').insert(imageUrls.map((url,i)=>({product_id:productId,image_url:url,image_type:'product',sort_order:i})));if(error)throw error}
+    const {error:variantDeleteError}=await client.from('product_variants').delete().eq('product_id',productId);if(variantDeleteError)throw variantDeleteError;
+    if(variants.length){const {error:variantInsertError}=await client.from('product_variants').insert(variants.map(v=>({...v,product_id:productId})));if(variantInsertError)throw variantInsertError}
+    closeForm();showStatus(editingId?'Product updated.':'Product added.');await loadRows();
+  }catch(error){$('formError').textContent=error.message||String(error);$('formError').style.display='block'}
+}
+async function deleteProduct(id){const p=rows.find(x=>x.id===id);if(!p)return;if(!confirm('Delete '+p.name+'? This cannot be undone.'))return;const {error}=await client.from('products').delete().eq('id',id);if(error)return showStatus(error.message,false);showStatus('Product deleted.');await loadRows()}
+$('f_image_files').addEventListener('change',()=>{$('uploadPreview').textContent=`${$('f_image_files').files.length} image(s) selected for upload.`});
+client.auth.onAuthStateChange(()=>{});boot();
+</script>
+</body>
+</html>
