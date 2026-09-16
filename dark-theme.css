@@ -320,3 +320,61 @@ a:hover{
     transform:none;
   }
 }
+/* CHECKOUT DARK THEME FIX */
+
+.checkout,
+.checkoutModal,
+.checkoutSheet,
+.checkoutBox,
+.checkoutPanel,
+.checkoutContent,
+.checkout-page,
+.checkout-page * {
+  color:#f5f7ff!important;
+}
+
+.checkout,
+.checkoutModal,
+.checkoutSheet,
+.checkoutBox,
+.checkoutPanel,
+.checkoutContent,
+.checkout-page {
+  background:#0b0d12!important;
+}
+
+.checkout input,
+.checkout textarea,
+.checkout select,
+.checkoutModal input,
+.checkoutModal textarea,
+.checkoutModal select,
+.checkoutSheet input,
+.checkoutSheet textarea,
+.checkoutSheet select {
+  background:#11141b!important;
+  color:#fff!important;
+  border-color:#303541!important;
+}
+
+.checkout input::placeholder,
+.checkout textarea::placeholder {
+  color:#777e8b!important;
+}
+
+.checkout button,
+.checkoutModal button,
+.checkoutSheet button {
+  color:#fff!important;
+}
+
+.checkout h1,
+.checkout h2,
+.checkout h3,
+.checkout h4,
+.checkout p,
+.checkout label,
+.checkout span,
+.checkout strong {
+  color:#f5f7ff!important;
+}
