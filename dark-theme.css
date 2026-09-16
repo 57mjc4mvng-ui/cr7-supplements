@@ -444,3 +444,14 @@ a:hover{
 .categoryCircle:nth-child(1) .categoryCircleVisual img{
   visibility:hidden!important;
 }
+/* WHEY ISOLATE CATEGORY COVER */
+.categoryCircle:nth-child(2) .categoryCircleVisual{
+  background-image:url("https://fjjuemmfpcqexjxbijok.supabase.co/storage/v1/object/public/product-images/8D897E4F-6935-4BF8-BC85-7DB3ABE381B5.png")!important;
+  background-size:100% 100%!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+}
+
+.categoryCircle:nth-child(2) .categoryCircleVisual img{
+  visibility:hidden!important;
+}
