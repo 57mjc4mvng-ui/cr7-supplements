@@ -392,3 +392,33 @@ a:hover{
 .featuredThumb.active{
   border-color:#ff3040!important;
 }
+/* FORCE PRODUCT THUMBNAIL AREA DARK */
+
+.featuredThumbs,
+.featuredThumbs *,
+.detailThumbs,
+.detailThumbs *,
+.thumbs,
+.thumbnailStrip {
+  background-color:#07080c!important;
+}
+
+.featuredThumbs,
+.detailThumbs,
+.thumbs,
+.thumbnailStrip {
+  background:#07080c!important;
+  border-color:#272b36!important;
+}
+
+.featuredThumb,
+.detailThumb {
+  background:#0e1016!important;
+  border-color:#303541!important;
+}
+
+.featuredThumb.active,
+.detailThumb.active {
+  background:#0e1016!important;
+  border-color:#ff3040!important;
+}
