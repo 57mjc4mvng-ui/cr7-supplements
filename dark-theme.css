@@ -514,3 +514,32 @@ a:hover{
   background-color: #07080c !important;
   border: 2px solid #ff3040 !important;
 }
+/* CHECKOUT HEADER FIX */
+
+.checkout,
+.checkoutModal,
+.checkoutSheet,
+.checkoutBox,
+.checkoutPanel,
+.checkoutContent,
+.checkoutHeader {
+  background:#07080c!important;
+  color:#f5f7ff!important;
+}
+
+.checkout h1,
+.checkout h2,
+.checkout h3,
+.checkoutHeader h1,
+.checkoutHeader h2 {
+  color:#f5f7ff!important;
+}
+
+.checkout .close,
+.checkoutModal .close,
+.checkoutSheet .close,
+.checkoutHeader .close {
+  background:#07080c!important;
+  color:#f5f7ff!important;
+  border-color:#303541!important;
+}
