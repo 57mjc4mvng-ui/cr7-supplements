@@ -455,3 +455,14 @@ a:hover{
 .categoryCircle:nth-child(2) .categoryCircleVisual img{
   visibility:hidden!important;
 }
+/* MASS GAINERS CATEGORY COVER */
+.categoryCircle:nth-child(5) .categoryCircleVisual{
+  background-image:url("https://fjjuemmfpcqexjxbijok.supabase.co/storage/v1/object/public/product-images/F58CF170-FA8F-4A9E-A8D7-05A4114CAFF1.png")!important;
+  background-size:100% 100%!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+}
+
+.categoryCircle:nth-child(5) .categoryCircleVisual img{
+  visibility:hidden!important;
+}
